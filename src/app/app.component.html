@@ -10,45 +10,46 @@
 </div>
 <div style="padding: 15px;text-align: left;">
   <h3>Registration Form</h3>
-  <form>
+  <form #user="ngForm" (ngSubmit) = "saveData(user.value)">
   <label>
     First Name :
   </label><br>
-  <input type="text" name="first_name" placeholder="Enter First Name"> <br>
+  <input type="text" name="first_name" ngModel placeholder="Enter First Name"> <br>
   <label>
     Last Name :
   </label><br>
-  <input type="text" name="last_name" placeholder="Enter Last Name"><br>
+  <input type="text" name="last_name" ngModel placeholder="Enter Last Name"><br>
   <label>
     Username :
   </label><br>
-  <input type="text" name="username" placeholder="Enter Username"> <br>
+  <input type="text" name="username" ngModel placeholder="Enter Username"> <br>
   <label>
     Email :
   </label><br>
-  <input type="email" name="email" placeholder="Enter Email"> <br>
+  <input type="email" name="email" ngModel placeholder="Enter Email"> <br>
   <label>
     Phone Number :
   </label><br>
-  <input type="Phone" name="phone_number" placeholder="(019) 205-5256"> <br>
+  <input type="Phone" ngModel name="phone_number" placeholder="(019) 205-5256"> <br>
   <label>
     Birth Date :
   </label><br>
-  <input type="date" name="birth_date" placeholder="Enter Birth Date"> <br>
+  <input type="date" name="birth_date" ngModel placeholder="Enter Birth Date"> <br>
   <label>
     Profession :
   </label><br>
-  <select name="profession">
+  <select name="profession" ngModel>
     <option value="managing_director">Managing Director</option>
     <option value="programmer">Programmer</option>
   </select> <br>
   <label>
-    Want to be subscriber : <input style="width:20px;" type="checkbox" name="subscriber">
+    Want to be subscriber : <input ngModel style="width:20px;" type="checkbox" name="subscriber">
   </label>
+  <input type="submit" value="Save">
 </form>
    <br>
 </div>
-<button (click) = "saveData($event)">Save</button>
+
 
 </div>
 <!--<h2>Here are some links to help you start: </h2>
