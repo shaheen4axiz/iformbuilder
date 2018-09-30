@@ -30,11 +30,15 @@
   <label>
     Phone Number :
   </label><br>
-  <input type="Phone" ngModel name="phone_number" placeholder="(019) 205-5256"> <br>
+  <input type="text" (keypress) = "numberOnly($event)" (blur)="phonenumberValidation($event)" minlength=10 maxlength=10 ngModel name="phone_number" placeholder="(019) 205-5256"> <br>
   <label>
     Birth Date :
   </label><br>
   <input type="date" name="birth_date" ngModel placeholder="Enter Birth Date"> <br>
+  <label>
+    Address :
+  </label><br>
+  <textarea name="address" ngModel placeholder="Enter Your Address"></textarea> <br>
   <label>
     Profession :
   </label><br>
@@ -43,7 +47,7 @@
     <option value="programmer">Programmer</option>
   </select> <br>
   <label>
-    Want to be subscriber : <input ngModel style="width:20px;" type="checkbox" name="subscriber">
+    Want to be subscriber : <input ngModel style="width:20px;" type="checkbox" name="subscribe">
   </label>
   <input type="submit" value="Save">
 </form>

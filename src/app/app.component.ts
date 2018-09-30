@@ -22,17 +22,40 @@ export class AppComponent {
 
 	saveData = function(user){
 		//console.log(user);
+		user.phone_number = user.phone_number.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
 		this.http.post('http://fouraxiz.com/iformbuilder/index.php',user,{
     headers : {
         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-    }).subscribe(result => {
-		if(result.id){
+    }}).subscribe(result => {
+    	console.log(result);
+		if(result.msg=='success'){
 			alert('Data Saved Successfully');
+			window.location.reload();
+		}else{
+			alert(result.msg.error_message);
 		}
+		
 		},error=>{
-			console.log('Error : '+error);
+			console.log(error);
 		});
 	}
+
+phonenumberValidation = function(e) {
+	var phoneNumberString = e.target.value;
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+
+  e.target.value = cleaned.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
+
+  }
+numberOnly = function (event) {
+   const pattern = /[0-9\ ]/;
+
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+
+  }
 }
 
 

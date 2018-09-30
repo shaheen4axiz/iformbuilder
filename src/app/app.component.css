@@ -41,7 +41,7 @@ button{
     color: #fff;
     border: 1px solid;
 }
-input,select{
+input,select,textarea{
     padding: 10px;
     width: 92%;
     margin-top: 10px;

@@ -342,7 +342,7 @@ class iformbuilder_api {
         );
     }
  function saveData($data,$token) {
-        $this->token = $token;
+          $this->token = $token;
         $url = 'https://app.iformbuilder.com/exzact/api/v60/profiles/' . $this->profile . '/pages/' . $this->page_id . '/records';
         $fields['fields'] = array();
        
@@ -351,8 +351,11 @@ class iformbuilder_api {
             $temp['element_name'] = $k;
             if($k=='birth_date')
             $temp['value'] = date('Y-m-d',strtotime($v));
+            else if($k=='subscribe')
+            $temp['value'] = $v=='on' ? '1' : '0';
             else
             $temp['value'] = $v;
+            
             $fields['fields'][] = $temp;
         }
         $response = $this->sendRequest($url, $this->jsonEncode($fields),true);
