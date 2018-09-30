@@ -20,15 +20,15 @@
   </label><br>
   <input type="text" name="last_name" ngModel placeholder="Enter Last Name"><br>
   <label>
-    Username :
+    Username <span class="red_color">*</span>:
   </label><br>
   <input type="text" name="username" ngModel placeholder="Enter Username" required> <br>
   <label>
-    Email :
+    Email <span class="red_color">*</span>:
   </label><br>
-  <input type="email" name="email" ngModel placeholder="Enter Email" required> <br>
+  <input type="email" name="email" (blur) = "validateEmail($event.target.value)" ngModel placeholder="Enter Email" required> <br>
   <label>
-    Phone Number :
+    Phone Number <span class="red_color">*</span>:
   </label><br>
   <input type="text" (keypress) = "numberOnly($event)" (blur)="phonenumberValidation($event)" minlength=10 maxlength=10 ngModel name="phone_number" placeholder="(019) 205-5256" required> <br>
   <label>
@@ -40,7 +40,7 @@
   </label><br>
   <textarea name="address" ngModel placeholder="Enter Your Address"></textarea> <br>
   <label>
-    Profession :
+    Profession <span class="red_color">*</span>:
   </label><br>
   <select name="profession" ngModel required>
     <option value="managing_director">Managing Director</option>
@@ -49,23 +49,11 @@
   <label>
     Want to be subscriber : <input ngModel style="width:20px;" type="checkbox" name="subscribe">
   </label>
-  <input type="submit" value="Save">
+  <input style="width:95%" type="submit" value="Save">
 </form>
    <br>
 </div>
 
 
 </div>
-<!--<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>-->
 

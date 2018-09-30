@@ -40,12 +40,21 @@ button{
     background:darkcyan;
     color: #fff;
     border: 1px solid;
+    width:100%;
 }
-input,select,textarea{
+input,textarea{
     padding: 10px;
     width: 92%;
     margin-top: 10px;
 }
 label{
     margin-top: 10px;
+}
+select{
+    padding: 10px;
+    width: 95%;
+    margin-top: 10px;
+}
+.red_color{
+    color:red;
 }

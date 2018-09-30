@@ -29,6 +29,12 @@ export class AppComponent {
 			alert('Please enter vaild email');
 			return false;
 		}
+		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        
+		if(!regex.test(user.email)){
+			alert('Please enter vaild email');
+			return false;
+		}
 		if(user.phone_number==''){
 			alert('Please enter vaild phone number');
 			return false;
@@ -61,9 +67,13 @@ export class AppComponent {
 
 phonenumberValidation = function(e) {
 	var phoneNumberString = e.target.value;
+	if(phoneNumberString.length<10){
+		alert('Please enter minimum 10 digit phone number');
+		return false;
+	}
     var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
 
-  e.target.value = cleaned.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
+    e.target.value = cleaned.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
 
   }
 numberOnly = function (event) {
@@ -75,6 +85,17 @@ numberOnly = function (event) {
     }
 
   }
+
+ validateEmail = function(email) {
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if(!regex.test(email)) {
+           alert('Please enter a valid email address');
+           return false;
+        }else{
+           return true;
+        }
+      }
+
 }
 
 
