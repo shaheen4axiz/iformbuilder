@@ -22,15 +22,15 @@
   <label>
     Username :
   </label><br>
-  <input type="text" name="username" ngModel placeholder="Enter Username"> <br>
+  <input type="text" name="username" ngModel placeholder="Enter Username" required> <br>
   <label>
     Email :
   </label><br>
-  <input type="email" name="email" ngModel placeholder="Enter Email"> <br>
+  <input type="email" name="email" ngModel placeholder="Enter Email" required> <br>
   <label>
     Phone Number :
   </label><br>
-  <input type="text" (keypress) = "numberOnly($event)" (blur)="phonenumberValidation($event)" minlength=10 maxlength=10 ngModel name="phone_number" placeholder="(019) 205-5256"> <br>
+  <input type="text" (keypress) = "numberOnly($event)" (blur)="phonenumberValidation($event)" minlength=10 maxlength=10 ngModel name="phone_number" placeholder="(019) 205-5256" required> <br>
   <label>
     Birth Date :
   </label><br>
@@ -42,7 +42,7 @@
   <label>
     Profession :
   </label><br>
-  <select name="profession" ngModel>
+  <select name="profession" ngModel required>
     <option value="managing_director">Managing Director</option>
     <option value="programmer">Programmer</option>
   </select> <br>

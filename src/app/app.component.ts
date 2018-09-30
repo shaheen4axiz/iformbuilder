@@ -21,7 +21,26 @@ export class AppComponent {
 	}
 
 	saveData = function(user){
-		//console.log(user);
+		if(user.username==''){
+			alert('Please enter username');
+			return false;
+		}
+		if(user.email==''){
+			alert('Please enter vaild email');
+			return false;
+		}
+		if(user.phone_number==''){
+			alert('Please enter vaild phone number');
+			return false;
+		}
+		if(user.birthdate==''){
+			alert('Please enter birthdate');
+			return false;
+		}
+		if(user.profession==''){
+			alert('Please select profession');
+			return false;
+		}
 		user.phone_number = user.phone_number.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1) $2-$3");
 		this.http.post('http://fouraxiz.com/iformbuilder/index.php',user,{
     headers : {
