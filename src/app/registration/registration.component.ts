@@ -21,7 +21,7 @@ title = 'Iformbuilder APP';
 	}
 
 getData = function(){
-		this.http.get('http://fouraxiz.com/iformbuilder/index.php/iformbuilder_api/getData')
+		this.http.get('http://fouraxiz.com/iformbuilder/index.php/iformbuilder_api/getData?rnd='+new Date().getTime())
 		.subscribe(result => {
     	console.log(result);
     	this.dataList = result;
